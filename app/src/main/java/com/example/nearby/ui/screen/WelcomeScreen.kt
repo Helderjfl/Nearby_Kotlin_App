@@ -31,7 +31,7 @@ import com.example.nearby.ui.theme.RedBase
 import com.example.nearby.ui.theme.Typography
 
 @Composable
-fun WelcomeScreen(modifier: Modifier = Modifier) {
+fun WelcomeScreen(modifier: Modifier = Modifier, onNavigateToHome: () -> Unit) {
     Column(
         modifier = modifier
             .background(Color.White)
@@ -45,7 +45,7 @@ fun WelcomeScreen(modifier: Modifier = Modifier) {
         NearbyButton(
             modifier = Modifier.fillMaxWidth(),
             text = "Começar",
-            onClick = { /*TODO*/ }
+            onClick = onNavigateToHome
         )
     }
 }
@@ -59,5 +59,5 @@ fun WelcomeScreen(modifier: Modifier = Modifier) {
 @Preview
 @Composable
 private fun WelcomeScreenPreview() {
-    WelcomeScreen()
+    WelcomeScreen(onNavigateToHome = {})
 }
